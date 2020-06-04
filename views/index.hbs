@@ -1,0 +1,34 @@
+<link rel="stylesheet" href="styles/style.css">
+<body>
+{{>header}}
+<div class="container">
+    <h1>Pintores</h1>
+    {{#if pintores}}
+    <table class="table table-dark table-hover">
+        <thead>
+            <tr>
+                <td class="font">ID</td>
+                <td class="font">Nombre</td>
+                <td class="font">Nacionalidad</td>
+                <td class="font">Corriente</td>
+                <td class="font">Imagen</td>
+            </tr>
+        </thead>
+        <tbody>
+            {{#each pintores}}
+            <tr>
+                <td class="font">{{_id}}</td>
+                <td class="font">{{nombre}}</td>
+                <td class="font">{{nacionalidad}}</td>
+                <td class="font">{{corriente}}</td>
+                <td class="font"><img src="../images/{{pintura}}" alt=""></td>
+            </tr>
+            {{/each}}
+        </tbody>
+    </table>
+    {{else}}
+    <div class="font">No se encuentran pintores</div>
+    {{/if}}
+    {{>footer}}
+</div>
+</body>
